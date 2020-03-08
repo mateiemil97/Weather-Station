@@ -1,0 +1,11 @@
+D:\Facultate\Java\Proiect\WeatherStation\Database\bin\Debug\netcoreapp3.1\Database.deps.json
+D:\Facultate\Java\Proiect\WeatherStation\Database\bin\Debug\netcoreapp3.1\Database.dll
+D:\Facultate\Java\Proiect\WeatherStation\Database\obj\Debug\netcoreapp3.1\Database.AssemblyInfoInputs.cache
+D:\Facultate\Java\Proiect\WeatherStation\Database\obj\Debug\netcoreapp3.1\Database.AssemblyInfo.cs
+D:\Facultate\Java\Proiect\WeatherStation\Database\bin\Debug\netcoreapp3.1\Database.pdb
+D:\Facultate\Java\Proiect\WeatherStation\Database\obj\Debug\netcoreapp3.1\Database.csprojAssemblyReference.cache
+D:\Facultate\Java\Proiect\WeatherStation\Database\obj\Debug\netcoreapp3.1\Database.dll
+D:\Facultate\Java\Proiect\WeatherStation\Database\obj\Debug\netcoreapp3.1\Database.pdb
+D:\Facultate\Java\Proiect\WeatherStation\Database\bin\Debug\netcoreapp3.1\Entities.dll
+D:\Facultate\Java\Proiect\WeatherStation\Database\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\Facultate\Java\Proiect\WeatherStation\Database\obj\Debug\netcoreapp3.1\Database.csproj.CopyComplete

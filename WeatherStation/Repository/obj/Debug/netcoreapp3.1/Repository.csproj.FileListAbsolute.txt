@@ -1,0 +1,8 @@
+D:\Facultate\Java\Proiect\WeatherStation\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+D:\Facultate\Java\Proiect\WeatherStation\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+D:\Facultate\Java\Proiect\WeatherStation\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+D:\Facultate\Java\Proiect\WeatherStation\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
+D:\Facultate\Java\Proiect\WeatherStation\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+D:\Facultate\Java\Proiect\WeatherStation\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+D:\Facultate\Java\Proiect\WeatherStation\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+D:\Facultate\Java\Proiect\WeatherStation\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
