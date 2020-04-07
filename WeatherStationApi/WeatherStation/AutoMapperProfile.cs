@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Models.WeatherStationModel;
+using Entities;
+using Models.MeasurementDto;
+
 
 namespace WeatherStation
 {
@@ -11,7 +13,7 @@ namespace WeatherStation
     {
         public AutoMapperProfile()
         {
-            CreateMap<Entities.WeatherStation, WeatherStationForGetDto>();
+            //CreateMap<MeasurementForGetDto>(Measurement);
         }
     }
 }

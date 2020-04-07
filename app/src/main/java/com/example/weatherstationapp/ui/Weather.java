@@ -1,4 +1,4 @@
-package com.example.weatherstationapp.ui.home;
+package com.example.weatherstationapp.ui;
 
 import android.os.AsyncTask;
 

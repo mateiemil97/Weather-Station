@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#204051">
+
+    <TextView
+        android:id="@+id/temperatureValue"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="369dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="148dp"
+        android:text="Temperatura: 0°C"
+
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cityLabel"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="242dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="36dp"
+        android:color="#FFFFFF"
+        android:text="Turceni"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#ffffff"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/humidityValue"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="370dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="224dp"
+        android:text="Umiditatea aerului: 0%"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/actualizare_id"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="370dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="316dp"
+        android:text="Ultima actualizare:"
+        android:textAllCaps="true"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:onClick="RefreshData"
+        android:text="Reimprospateaza"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

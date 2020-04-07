@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
 using Database;
@@ -14,6 +15,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Repository;
+using Repository.MeasurementRepository;
+using Services;
+using Services.MeasurementService;
+
 
 namespace WeatherStation
 {
@@ -29,7 +34,9 @@ namespace WeatherStation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllers();
+            services.AddMvc().AddApplicationPart(Assembly.Load(new AssemblyName("Controllers")));
             services.AddDbContext<WeatherStationContext>(connection =>
                 connection.UseSqlServer(Configuration.GetConnectionString("connection"),
                     b => b.MigrationsAssembly("WeatherStation"))
@@ -41,9 +48,13 @@ namespace WeatherStation
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddScoped<IGenericRepository<Entities.WeatherStation>, GenericRepository<Entities.WeatherStation>>();
-            services.AddScoped<IGenericRepository<Entities.Location>, GenericRepository<Entities.Location>>();
-            services.AddScoped<IGenericRepository<Entities.Measurement>, GenericRepository<Entities.Measurement>>();
+            services.AddScoped<DbContext, WeatherStationContext>();
+
+            services.AddScoped<IMeasurementRepository, MeasurementRepository>();
+            services.AddScoped<IMeasurementService,MeasurementService>();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
+
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

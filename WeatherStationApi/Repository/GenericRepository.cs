@@ -28,9 +28,11 @@ namespace Repository
             return await _table.ToListAsync();
         }
 
-        public async void Create(T obj)
+        public async Task Create(IEnumerable<T> obj)
         {
-            await _table.AddAsync(obj);
+            await _table.AddRangeAsync(obj);
         }
+
+      
     }
 }

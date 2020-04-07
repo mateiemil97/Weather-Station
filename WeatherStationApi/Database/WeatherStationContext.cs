@@ -9,8 +9,6 @@ namespace Database
         public WeatherStationContext(DbContextOptions<WeatherStationContext> options)
             : base(options) { }
 
-        public DbSet<WeatherStation> WeatherStation { get; set; }
-        public DbSet<Location> Location { get; set; }
         public DbSet<Measurement> Measurement { get; set; }
     }
 }

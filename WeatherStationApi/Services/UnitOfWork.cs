@@ -5,51 +5,59 @@ using System.Threading.Tasks;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using Repository.MeasurementRepository;
+
 
 namespace Services
 {
     public class UnitOfWork: IUnitOfWork, IDisposable
     {
         private DbContext _context;
-        private GenericRepository<Location> _location;
-        private GenericRepository<Measurement> _measurement;
-        private GenericRepository<WeatherStation> _weatherStation;
-        public UnitOfWork(DbContext context)
+        
+        public IMeasurementRepository Measurement { get; }
+       
+        public UnitOfWork(
+            DbContext context,
+
+            IMeasurementRepository measurement
+          
+            )
         {
             _context = context;
+            Measurement = measurement;
         }
 
-        public GenericRepository<Location> Location
-        {
-            get
-            {
-                if(_location == null)
-                    _location = new GenericRepository<Location>(_context);
-                return _location;
-            }
-        }
+//        public GenericRepository<Location> Location
+//        {
+//            get
+//            {
+//                if(_location == null)
+//                    _location = new GenericRepository<Location>(_context);
+//                return _location;
+//            }
+//        }
+//
+//        public GenericRepository<Measurement> Measurement
+//        {
+//            get
+//            {
+//                if(_measurement == null)
+//                    _measurement = new GenericRepository<Measurement>(_context);
+//                return _measurement;
+//            }
+//        }
+//
+//        public GenericRepository<WeatherStation> WeatherStation
+//        {
+//            get
+//            {
+//                if (_weatherStation == null)
+//                    _weatherStation = new GenericRepository<WeatherStation>(_context);
+//                return _weatherStation;
+//            }
+//        }
 
-        public GenericRepository<Measurement> Measurement
-        {
-            get
-            {
-                if(_measurement == null)
-                    _measurement = new GenericRepository<Measurement>(_context);
-                return _measurement;
-            }
-        }
-
-        public GenericRepository<WeatherStation> WeatherStation
-        {
-            get
-            {
-                if (_weatherStation == null)
-                    _weatherStation = new GenericRepository<WeatherStation>(_context);
-                return _weatherStation;
-            }
-        }
-
-        public void Save()
+        public void SaveAsync()
         {
             _context.SaveChangesAsync();
         }

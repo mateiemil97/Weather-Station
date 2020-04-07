@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Database\\Database.csproj": {}
+    "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Database\\Database.csproj": {}
   },
   "projects": {
-    "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Database\\Database.csproj": {
+    "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Database\\Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Database\\Database.csproj",
+        "projectUniqueName": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Database\\Database.csproj",
         "projectName": "Database",
-        "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Database\\Database.csproj",
+        "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Database\\Database.csproj",
         "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-        "outputPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Database\\obj\\",
+        "outputPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Entities\\Entities.csproj"
+              "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Entities\\Entities.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Entities\\Entities.csproj": {
+    "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Entities\\Entities.csproj",
+        "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-        "outputPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Entities\\obj\\",
+        "outputPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

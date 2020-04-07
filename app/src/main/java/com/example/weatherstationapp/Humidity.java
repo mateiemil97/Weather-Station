@@ -1,8 +1,6 @@
-package com.example.weatherstationapp.ui;
+package com.example.weatherstationapp;
 
-import com.example.weatherstationapp.MainActivity;
-import com.example.weatherstationapp.WeatherAtributes;
-import com.example.weatherstationapp.ui.home.Weather;
+import com.example.weatherstationapp.ui.Weather;
 
 import org.json.JSONObject;
 
@@ -10,6 +8,8 @@ public class Humidity extends WeatherAtributes {
 
     public Humidity(Weather weather){
         SetWeather(weather);
+        SetDate("");
+        SetValue(0);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Humidity extends WeatherAtributes {
         // MainActivity.Weather weather = new MainActivity.Weather();
         try {
             //get temperature
-            contentHumidity = weather.execute("https://weatherstation.conveyor.cloud/api/measurements/measurement/latest?type=temperature").get();
+            contentHumidity = weather.execute("https://weatherstation.conveyor.cloud/api/measurements/measurement/latest?type=humidity").get();
 
             //check if data is was retrived succefully or not
 
@@ -33,5 +33,10 @@ public class Humidity extends WeatherAtributes {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String GetValueByDate(String date) {
+        return null;
     }
 }

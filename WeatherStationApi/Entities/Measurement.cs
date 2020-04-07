@@ -11,11 +11,9 @@ namespace Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [ForeignKey("WeatherStation")]
-        public int WeatherStationId { get; set; }
         public string Type { get; set; }
         public string Value { get; set; }
         public DateTime DateTime { get; set; }
-        public WeatherStation WeatherStation { get; set; }
+        
     }
 }

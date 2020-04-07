@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Models\\Models.csproj",
+      "projectUniqueName": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Models\\Models.csproj",
+      "projectPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-      "outputPath": "D:\\Facultate\\Java\\Proiect\\WeatherStation\\Models\\obj\\",
+      "outputPath": "D:\\Facultate\\Java\\Proiect\\WeatherStationApi\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

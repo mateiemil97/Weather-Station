@@ -8,6 +8,7 @@ namespace Repository
     {
         Task<T> Get(int id);
         Task<IEnumerable<T>> GetAll();
-        void Create(T obj);
+        Task Create(IEnumerable<T> obj);
+  
     }
 }
