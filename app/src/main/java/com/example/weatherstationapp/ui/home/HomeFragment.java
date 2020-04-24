@@ -17,6 +17,13 @@ import com.example.weatherstationapp.R;
 import com.example.weatherstationapp.Temperature;
 import com.example.weatherstationapp.WeatherAtributes;
 import com.example.weatherstationapp.ui.Weather;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 import static androidx.lifecycle.ViewModelProviders.*;
 
@@ -33,65 +40,33 @@ public class HomeFragment extends Fragment {
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-        Weather weather1 = new Weather();
-        Weather weather2 = new Weather();
-
-        WeatherAtributes temperature = new Temperature(weather1);
-        WeatherAtributes humidity = new Humidity(weather2);
+        WeatherAtributes temperature = new Temperature();
+        WeatherAtributes humidity = new Humidity();
         //Get data
-        temperature.GetLatestValue();
-        float temp = temperature.GetValue();
-        String dateTimeTemperature = temperature.GetDateTime();
+
+
         final TextView tempValue = root.findViewById(R.id.temperatureValue);
-        tempValue.setText("Temperatura: " + Float.toString(temp) + "°C");
-
         final TextView dateValue = root.findViewById(R.id.actualizare_id);
-        if(!temperature.GetDateTime().isEmpty()) {
-            String[] arrOfDate = temperature.GetDateTime().split("T", 2);
-            String[] time = arrOfDate[1].split(":", 3);
-            dateValue.setText("Ultima actualizare:  " + arrOfDate[0] + " - " + time[0] + ":" + time[1]);
-        }
-        humidity.GetLatestValue();
-        float hum = humidity.GetValue();
         final TextView humidityValue = root.findViewById(R.id.humidityValue);
-        humidityValue.setText("Umiditatea aerului: " + Float.toString(hum) + "%");
-        Log.i("humidity",Float.toString(humidity.GetValue()));
 
+        temperature.GetLatestValue(tempValue,dateValue);
+        humidity.GetLatestValue(humidityValue,dateValue);
 
         refreshButton = root.findViewById(R.id.refreshButton);
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Weather weatherTemp = new Weather();
-                Weather weatherHum = new Weather();
-
-
-                WeatherAtributes temperature = new Temperature(weatherTemp);
-                WeatherAtributes humidity = new Humidity(weatherHum);
-                //Get data
-
-                humidity.GetLatestValue();
-                float hum = humidity.GetValue();
-                TextView humidityValue =(TextView) root.findViewById(R.id.humidityValue);
-                humidityValue.setText("Umiditatea aerului: " + Float.toString(hum) + "%");
-
-                temperature.GetLatestValue();
-                float temp = temperature.GetValue();
-                if(!temperature.GetDateTime().isEmpty()) {
-                    String[] arrOfDate = temperature.GetDateTime().split("T", 2);
-                    String[] time = arrOfDate[1].split(":", 3);
-                    dateValue.setText("Ultima actualizare:  " + arrOfDate[0] + " - " + time[0] + ":" + time[1]);
-                }
-                String dateTimeTemperature = temperature.GetDateTime();
-                TextView tempValue = root.findViewById(R.id.temperatureValue);
-                tempValue.setText("Temperatura: " + Float.toString(temp) + "°C");
-
+                WeatherAtributes temperature = new Temperature();
+                WeatherAtributes humidity = new Humidity();
+                final TextView tempValue = root.findViewById(R.id.temperatureValue);
                 final TextView dateValue = root.findViewById(R.id.actualizare_id);
-                String[] arrOfDate = temperature.GetDateTime().split("T", 2);
-                String[] time = arrOfDate[1].split(":",3);
-                dateValue.setText("Ultima actualizare:  " + arrOfDate[0] +" - " + time[0] + ":" + time[1]);
+                final TextView humidityValue = root.findViewById(R.id.humidityValue);
+
+                temperature.GetLatestValue(tempValue,dateValue);
+                humidity.GetLatestValue(humidityValue,dateValue);
             }
         });
         return root;
     }
+
 }

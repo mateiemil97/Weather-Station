@@ -13,7 +13,9 @@ namespace WeatherStation
     {
         public AutoMapperProfile()
         {
-            //CreateMap<MeasurementForGetDto>(Measurement);
+            CreateMap<MeasurementForGetDto, Measurement>();
+            CreateMap<Measurement,MeasurementForCreationDto>();
+            CreateMap<MeasurementForCreationDto,Measurement>();
         }
     }
 }

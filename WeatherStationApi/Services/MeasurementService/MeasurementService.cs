@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Entities;
+using Models.MeasurementDto;
 
 namespace Services.MeasurementService
 {
@@ -14,9 +16,9 @@ namespace Services.MeasurementService
             _unitOfWork = unitOfWork;
         }
 
-         Measurement IMeasurementService.GetLatestMeasurementByType(string type)
+         async Task<Measurement> IMeasurementService.GetLatestMeasurementByType(string type)
         {
-            var measurement = _unitOfWork.Measurement.GetLatestValue(type);
+            var measurement = await _unitOfWork.Measurement.GetLatestValue(type);
             return measurement;
         }
 
@@ -24,6 +26,28 @@ namespace Services.MeasurementService
          {
              var measurements = _unitOfWork.Measurement.GetMeasurementsByDay(type, date);
              return measurements;
+         }
+
+         async Task<bool> IMeasurementService.Create(Measurement measurement)
+         {
+             try
+             {
+                 await _unitOfWork.Measurement.Create(measurement);
+                 var saved = await _unitOfWork.SaveAsync();
+                 
+                 if (!saved)
+                 {
+                     return false;
+                 }
+
+                 return true;
+             }
+             catch (Exception e)
+             {
+                 Console.WriteLine(e);
+                 throw;
+             }
+             
          }
     }
 }

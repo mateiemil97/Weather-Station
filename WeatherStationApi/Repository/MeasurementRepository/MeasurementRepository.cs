@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Database;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using Models.MeasurementDto;
 
 namespace Repository.MeasurementRepository
@@ -16,13 +18,13 @@ namespace Repository.MeasurementRepository
             _context = context;
         }
 
-        public Measurement GetLatestValue(string type)
+        public async Task<Measurement> GetLatestValue(string type)
         {
-            var measurementFromDb = (from measurement in _context.Measurement
+            var measurementFromDb = await (from measurement in _context.Measurement
                     where measurement.Type == type
                     orderby measurement.DateTime descending
                     select measurement
-                ).Take(1).FirstOrDefault();
+                ).Take(1).FirstOrDefaultAsync();
 
             return measurementFromDb;
 

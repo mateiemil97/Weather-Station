@@ -1,5 +1,7 @@
 package com.example.weatherstationapp;
 
+import android.widget.TextView;
+
 import com.example.weatherstationapp.ui.Weather;
 
 import java.util.List;
@@ -29,6 +31,6 @@ public abstract class WeatherAtributes {
         return _dateTime;
     }
 
-    public abstract void GetLatestValue();
+    public abstract void GetLatestValue(TextView value, TextView dateTime);
     public abstract String GetValueByDate(String date);
 }

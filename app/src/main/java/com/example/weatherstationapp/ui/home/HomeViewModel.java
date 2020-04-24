@@ -14,20 +14,20 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
 
-        Weather weather = new Weather();
+       // Weather weather = new Weather();
 
-        WeatherAtributes temperature = new Temperature(weather);
+       // WeatherAtributes temperature = new Temperature();
 
         //Get data
-        temperature.GetLatestValue();
-        float temp = temperature.GetValue();
-        String dateTimeTemperature = temperature.GetDateTime();
+        //temperature.GetLatestValue();
+      //  float temp = temperature.GetValue();
+      //  String dateTimeTemperature = temperature.GetDateTime();
 
-        WeatherAtributes humidity = new Humidity(weather);
-
-        humidity.GetLatestValue();
-        float hum = humidity.GetValue();
-        String dateTimeHumidity = humidity.GetDateTime();
+      //  WeatherAtributes humidity = new Humidity();
+//
+//        humidity.GetLatestValue();
+//        float hum = humidity.GetValue();
+//        String dateTimeHumidity = humidity.GetDateTime();
 
         //Set data to ui
 

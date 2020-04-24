@@ -107,7 +107,7 @@
                 String date = month + "/" + day + "/" + year;
                 String dateToSHow = day + "/" + month + "/" + year;
                 dateToSend = date;
-                mDisplayDate.setText(date);
+                mDisplayDate.setText(dateToSHow);
 
 
             }
@@ -129,24 +129,6 @@
                 }
             }
         });
-
-//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-//        {
-//        @Override
-//        public void onCheckedChanged(RadioGroup group, int checkedId) {
-//        // checkedId is the RadioButton selected
-//            mDisplayDate = (TextView) view.findViewById(R.id.tvDate);
-//        switch(checkedId) {
-//        case R.id.radioButtonTemp: {
-//            GetDataFromBackend(view,"temperature");
-//        break;
-//        }
-//        case R.id.radioButtonHum:
-//            GetDataFromBackend(view,"humidity");
-//        break;
-//        }
-//        }
-//        });
 
     chart = (LineChart) view.findViewById(R.id.chartId);
     return view;
@@ -194,15 +176,16 @@
                                     measurements.add(new Entry(Integer.parseInt(meas.GetDateTime()),meas.GetValue()));
                                 }
 
-                                    LineDataSet lineDataSet = new LineDataSet(measurements, type == "temperature"?"^ temp - > ora" : "^ umid - > ora");
+                                    LineDataSet lineDataSet = new LineDataSet(measurements, type == "temperature"?"temp(°C) ^   ora(h) >" : "umid(%) ^   ora(h) > ");
                                     LineData lineData = new LineData(lineDataSet);
                                     // lineDataSet.setCubicIntensity(0.5f);
-
-                                    lineDataSet.setMode(LineDataSet.Mode.STEPPED);
+                                    lineData.setValueTextSize(15);
+                                    lineData.setValueTextColor(Color.parseColor("#FFA000"));
+                                    lineDataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
                                     chart.setData(lineData);
                                     chart.setVisibility(view.VISIBLE);
-
-
+                                    lineDataSet.setColor(Color.parseColor("#FFA000"));
+                                    lineDataSet.setCircleColor(Color.parseColor("#FFA000"));
                                     //graph fill params
                                     lineDataSet.setDrawFilled(true);
 
@@ -229,6 +212,8 @@
 
                                     Description description = new Description();
                                     description.setText(type == "temperature"?"Evolutia temperaturii pe zi":"Evolutia umiditatii pe zi");
+                                    description.setTextSize(15);
+                                    description.setTextColor(Color.parseColor("#FFA000"));
                                     chart.setDescription(description);
                                     lineDataSet.setDrawValues(false);
                                     lineDataSet.setDrawCircles(false);

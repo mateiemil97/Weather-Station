@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Repository
 {
@@ -28,9 +29,9 @@ namespace Repository
             return await _table.ToListAsync();
         }
 
-        public async Task Create(IEnumerable<T> obj)
-        {
-            await _table.AddRangeAsync(obj);
+        public async Task Create(T obj)
+        { 
+            await _table.AddAsync(obj);
         }
 
       

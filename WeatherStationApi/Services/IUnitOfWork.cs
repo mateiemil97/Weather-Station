@@ -8,8 +8,7 @@ namespace Services
 {
     public interface IUnitOfWork
     {
-        void SaveAsync();
-        
+        Task<bool> SaveAsync();
         IMeasurementRepository Measurement { get; }
        
     }

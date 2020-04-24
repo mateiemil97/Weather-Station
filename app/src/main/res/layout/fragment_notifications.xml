@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    >
 
 
         android:id="@+id/activity_main"
@@ -24,6 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:hint="Selecteaza data"
+        android:textColorHint="#FFA000"
         android:gravity="center"
         android:textSize="30sp" />
 
@@ -39,14 +41,16 @@
             android:id="@+id/radioButtonTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#204051"
+            android:buttonTint="#FFA000"
+            android:textColor="#FFA000"
             android:text="Temperatura" />
 
         <RadioButton
             android:id="@+id/radioButtonHum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#204051"
+            android:textColor="#FFA000"
+            android:buttonTint="#FFA000"
             android:text="Umiditate" />
     </RadioGroup>
 
@@ -84,15 +88,17 @@
 
     <Button
         android:id="@+id/buttonShowId"
-        android:layout_width="177dp"
-        android:layout_height="52dp"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
         android:layout_above="@+id/chartId"
         android:layout_below="@+id/tvDate"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="6dp"
-        android:layout_marginBottom="-1dp"
+        android:layout_marginBottom="3dp"
         android:layout_toEndOf="@+id/radioGroupId"
         android:layout_toRightOf="@+id/radioGroupId"
-        android:text="Afisaza" />
+        android:background="#FFA000"
+        android:text="Afiseaza"
+        android:textColor="#ffffff" />
 </RelativeLayout>

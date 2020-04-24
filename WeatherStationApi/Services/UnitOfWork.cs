@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Database;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using Repository;
@@ -12,12 +13,12 @@ namespace Services
 {
     public class UnitOfWork: IUnitOfWork, IDisposable
     {
-        private DbContext _context;
+        private WeatherStationContext _context;
         
         public IMeasurementRepository Measurement { get; }
        
         public UnitOfWork(
-            DbContext context,
+            WeatherStationContext context,
 
             IMeasurementRepository measurement
           
@@ -27,39 +28,10 @@ namespace Services
             Measurement = measurement;
         }
 
-//        public GenericRepository<Location> Location
-//        {
-//            get
-//            {
-//                if(_location == null)
-//                    _location = new GenericRepository<Location>(_context);
-//                return _location;
-//            }
-//        }
-//
-//        public GenericRepository<Measurement> Measurement
-//        {
-//            get
-//            {
-//                if(_measurement == null)
-//                    _measurement = new GenericRepository<Measurement>(_context);
-//                return _measurement;
-//            }
-//        }
-//
-//        public GenericRepository<WeatherStation> WeatherStation
-//        {
-//            get
-//            {
-//                if (_weatherStation == null)
-//                    _weatherStation = new GenericRepository<WeatherStation>(_context);
-//                return _weatherStation;
-//            }
-//        }
-
-        public void SaveAsync()
+  
+        public async Task<bool> SaveAsync()
         {
-            _context.SaveChangesAsync();
+            return  await _context.SaveChangesAsync() >= 1;
         }
 
         private bool _disposed;
