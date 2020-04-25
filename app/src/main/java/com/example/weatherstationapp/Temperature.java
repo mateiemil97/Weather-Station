@@ -23,13 +23,12 @@ public class Temperature extends WeatherAtributes {
 
     public Temperature(){
         SetDate("");
-        SetValue(0);
+
     }
     @Override
     public void GetLatestValue(final TextView temperature, final TextView dateTime) {
 
         String contentTemperature;
-        // MainActivity.Weather weather = new MainActivity.Weather();
 
             AsyncHttpClient asyncClient = new AsyncHttpClient();
 
@@ -45,7 +44,7 @@ public class Temperature extends WeatherAtributes {
                         SetValue(Float.parseFloat(temperatureValue));
                         SetDate(temperatureDateTime);
 
-                        temperature.setText("Temperatura: " + temperatureValue + "%");
+                        temperature.setText("Temperatura: " + temperatureValue + "°C");
                         Log.e("date",temperatureDateTime);
                         if(!temperatureDateTime.isEmpty()) {
                             String[] arrOfDate = temperatureDateTime.split("T", 2);
@@ -66,21 +65,7 @@ public class Temperature extends WeatherAtributes {
             });
 
 
-            //get temperature
-            //contentTemperature = weather.execute("https://weatherstation.conveyor.cloud/api/measurements/measurement/latest?type=temperature").get();
 
-            //check if data is was retrived succefully or not
-
-//            JSONObject jsonTemperature = new JSONObject(contentTemperature);
-//            String temperatureValue = jsonTemperature.getString("value");
-//            String temperatureDateTime = jsonTemperature.getString("dateTime");
-//
-//            SetValue(Float.parseFloat(temperatureValue));
-//            SetDate(temperatureDateTime);
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
     @Override
     public String GetValueByDate(String date) {

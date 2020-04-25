@@ -181,7 +181,7 @@
                                     // lineDataSet.setCubicIntensity(0.5f);
                                     lineData.setValueTextSize(15);
                                     lineData.setValueTextColor(Color.parseColor("#FFA000"));
-                                    lineDataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
+                                        lineDataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
                                     chart.setData(lineData);
                                     chart.setVisibility(view.VISIBLE);
                                     lineDataSet.setColor(Color.parseColor("#FFA000"));
